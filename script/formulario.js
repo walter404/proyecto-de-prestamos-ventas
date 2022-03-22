@@ -13,25 +13,40 @@ form.addEventListener("submit", e => {
     let entrar = false
     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
     parrafo.innerHTML = ""
-    if (nombre.value.length < 6) {
-        warnings += `El nombre no es valido <br>`
-        entrar = true
-    }
 
-    if (!regexEmail.test(email.value)) {
-        warnings += `El email no es valido <br>`
-        entrar = true
-    }
-    if (phone.value.length < 12) {
-        warnings += `El número no es valido <br>`
-        entrar = true
-    }
+    nombre.value.length < 6 ? warnings += `El nombre no es valido <br>` :
+    entrar = true;
 
-    if (entrar) {
-        parrafo.innerHTML = warnings
-    } else {
-        parrafo.innerHTML = "Felicidades su datos son correctos"
-    }
+     !regexEmail.test(email.value) ? warnings += `El email no es valido <br>`: 
+     entrar = true;
+
+    phone.value.length < 12 ? warnings += `El número no es valido <br>` :
+    entrar = true;
+
+     entrar ? parrafo.innerHTML = warnings : 
+    parrafo.innerHTML = "Felicidades su datos son correctos"
+
+
+
+    // if (nombre.value.length < 6) {
+    //     warnings += `El nombre no es valido <br>`
+    //     entrar = true
+    // }
+
+    // if (!regexEmail.test(email.value)) {
+    //     warnings += `El email no es valido <br>`
+    //     entrar = true
+    // }
+    // if (phone.value.length < 12) {
+    //     warnings += `El número no es valido <br>`
+    //     entrar = true
+    // }
+
+    // if (entrar) {
+    //     parrafo.innerHTML = warnings
+    // } else {
+    //     parrafo.innerHTML = "Felicidades su datos son correctos"
+    // }
 
 })
 
