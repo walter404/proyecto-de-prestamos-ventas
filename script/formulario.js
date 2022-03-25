@@ -16,17 +16,29 @@ form.addEventListener("submit", e => {
     parrafo.innerHTML = ""
 
     if (nombre.value.length < 6) {
-        warnings += `El nombre no es valido <br>`
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Algo anda mal! ',
+          })
         entrar = true
     }
 
     if (!regexEmail.test(email.value)) {
-        warnings += `El email no es valido <br>`
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Algo anda mal! ',
+            
+          })
         entrar = true
     }
     if (phone.value.length < 12) {
-         
-    warnings +=  `El número no es valido <br>`
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Algo anda mal!',
+          })
         entrar = true
     }
 
