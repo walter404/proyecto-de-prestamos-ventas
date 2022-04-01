@@ -65,6 +65,15 @@ boton.addEventListener("mouseover", () => {
 boton.addEventListener("mouseout", () => {
     boton.style.backgroundColor = '#d63031';
 })
+//enter para enviar 
+function usrpas(){
+    let entrar = false
+    if (entrar){
+        parrafo.innerHTML = warnings
+    }
+}
+  usrpas();
+
 
 // modoOscuroConLocalStorage
 const btnSwitch = document.querySelector('#switch');

@@ -32,6 +32,8 @@
  let productosAgregado = [];
  let totalCard = 0;
  let countProduct = 0;
+ //localStorage
+ 
 
  //funciones
  loadEventListenrs();
