@@ -81,6 +81,16 @@ nav .enlaces a {
 nav .enlaces a:hover {
   color: #707070;
 }
+.container5{
+  margin-top: 30px;
+  text-align:center ;
+  padding: 10px;
+}
+.container5 h3{
+  color: #32406d;
+  font-family: monospace;
+  font-size: 35px;
+}
 
 label {
   font-family: 'arial';
