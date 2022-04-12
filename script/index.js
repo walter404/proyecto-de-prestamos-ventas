@@ -107,14 +107,16 @@ const provincias = [{
         localidad: 'San Pedro'
     },
 ]
+const formulario = document.querySelector('#formulario');
+const boton = document.querySelector('#boton');
+const resultado = document.querySelector('#resultado');
+
+
 
 const guardarLocal = (clave, valor) => {
     localStorage.setItem(clave, valor)
 };
 
-const formulario = document.querySelector('#formulario');
-const boton = document.querySelector('#boton');
-const resultado = document.querySelector('#resultado');
 
 const filtrar = () => {
     // console.log(formulario.value);
