@@ -20,7 +20,7 @@ form.addEventListener("submit", e => {
             icon: 'error',
             title: 'Error',
             text: 'Algo anda mal! ',
-          })
+        })
         entrar = true
     }
 
@@ -29,8 +29,8 @@ form.addEventListener("submit", e => {
             icon: 'error',
             title: 'Error',
             text: 'Algo anda mal! ',
-            
-          })
+
+        })
         entrar = true
     }
     if (phone.value.length < 12) {
@@ -38,13 +38,13 @@ form.addEventListener("submit", e => {
             icon: 'error',
             title: 'Error',
             text: 'Algo anda mal!',
-          })
+        })
         entrar = true
     }
 
     if (entrar) {
         parrafo.innerHTML = warnings
-        
+
     } else {
         Swal.fire({
             position: 'top-end',
@@ -52,7 +52,7 @@ form.addEventListener("submit", e => {
             title: 'Envio exitoso',
             showConfirmButton: false,
             timer: 1500
-          })
+        })
     }
 
 })
@@ -66,13 +66,13 @@ boton.addEventListener("mouseout", () => {
     boton.style.backgroundColor = '#d63031';
 })
 //enter para enviar 
-function usrpas(){
+function usrpas() {
     let entrar = false
-    if (entrar){
+    if (entrar) {
         parrafo.innerHTML = warnings
     }
 }
-  usrpas();
+usrpas();
 
 
 // modoOscuroConLocalStorage
