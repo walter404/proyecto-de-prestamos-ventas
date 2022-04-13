@@ -31,37 +31,40 @@
 
         <div class="container3">
             <h1 class="logo">Comuníquese con <span> nosotros </span></h1>
+
             <div class="contact-wrapper">
-                <div class="contact-from">
-                    <form action="#" class="form" id="form">
-
-                        <p class="p">
-                            <label class="titulos"> Nombre completo </label>
-                            <input type=" text " style="color: #333;" name=" fullname " id="nombreCompleto">
-                        </p>
-                        <p class="p">
-                            <label class="titulos"> Correo electrónico </label>
-                            <input type=" email " style="color: #333;" name=" email " id="email">
-                        </p>
-                        <p class="p">
-                            <label class="titulos"> Número de teléfono </label>
-                            <input type=" tel " name=" style=" color: #333;" phone " id=" phone">
-                        </p>
-                        <p class="block">
-                            <etiqueta class="titulos"> Mensaje </etiqueta>
-                            <textarea name=" message " rows=" 3 " id="mensaje" style="color: #333;"> </textarea>
-                        </p>
-                        <div>
-                            <p class="block">
-                                <button class="boton" type="submit" id="boton" onclick="usrpas()">
-                                    Enviar
-                                </button>
-                                <p class="warnings" id="warnings"></p>
-
-                            </p>
+                <div class="wrapper">
+                    <header>Send us a Message</header>
+                    <form action="#">
+                      <div class="dbl-field">
+                        <div class="field">
+                          <input type="text" name="name" placeholder="Enter your name">
+                          <i class='fas fa-user'></i>
                         </div>
+                        <div class="field">
+                          <input type="text" name="email" placeholder="Enter your email">
+                          <i class='fas fa-envelope'></i>
+                        </div>
+                      </div>
+                      <div class="dbl-field">
+                        <div class="field">
+                          <input type="text" name="phone" placeholder="Enter your phone">
+                          <i class='fas fa-phone-alt'></i>
+                        </div>
+                        <div class="field">
+                          <input type="text" name="website" placeholder="Enter your website">
+                          <i class='fas fa-globe'></i>
+                        </div>
+                      </div>
+                      <div class="message">
+                        <textarea placeholder="Write your message" name="message"></textarea>
+                      </div>
+                      <div class="button-area">
+                        <button class="boton2" type="submit">Send Message</button>
+                        
+                      </div>
                     </form>
-                </div>
+                  </div>
 
             </div>
 

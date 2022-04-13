@@ -1,61 +1,69 @@
 // fomulario de contacto
-const nombre = document.getElementById("nombreCompleto");
-const email = document.getElementById("email");
-const phone = document.getElementById("phone");
-const form = document.getElementById("form");
-const parrafo = document.getElementById("warnings");
-const mensaje = document.getElementById("mensajes");
-const boton = document.getElementById("boton");
+const form = document.querySelector("form"),
+statusTxt = form.querySelector(".button-area");
 
+form.onsubmit = (e)=>{
+  e.preventDefault();
+  statusTxt.style.color = "#0D6EFD";
+  statusTxt.style.display = "block";
+  statusTxt.innerText = "Enviando mensaje..."
+  form.classList.add("disabled");
 
-form.addEventListener("submit", e => {
-    e.preventDefault()
-    let warnings = ""
-    let entrar = false
-    let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
-    parrafo.innerHTML = ""
-
-    if (nombre.value.length < 6) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'Algo anda mal! ',
-        })
-        entrar = true
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", "message.php", true);
+  xhr.onload = ()=>{
+    if(xhr.readyState == 4 && xhr.status == 200){
+      let response = xhr.response;
+      if(response.indexOf("Email and message field is required!") != -1 || response.indexOf("Enter a valid email address!") != -1 || response.indexOf("Sorry, failed to send your message!") != -1){
+        statusTxt.style.color = "red";
+      }else{
+        form.reset();
+        setTimeout(()=>{
+          statusTxt.style.display = "none";
+        }, 3000);
+      }
+      statusTxt.innerText = response;
+      form.classList.remove("disabled");
     }
+  }
+  let formData = new FormData(form);
+  xhr.send(formData);
+}
 
-    if (!regexEmail.test(email.value)) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'Algo anda mal! ',
 
-        })
-        entrar = true
-    }
-    if (phone.value.length < 12) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'Algo anda mal!',
-        })
-        entrar = true
-    }
 
-    if (entrar) {
-        parrafo.innerHTML = warnings
+// const nombre = document.getElementById("nombreCompleto");
+// const email = document.getElementById("email");
+// const phone = document.getElementById("phone");
+// const form = document.getElementById("form");
+// const parrafo = document.getElementById("warnings");
+// const mensaje = document.getElementById("mensajes");
+// const boton = document.getElementById("boton");
 
-    } else {
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Envio exitoso',
-            showConfirmButton: false,
-            timer: 1500
-        })
-    }
 
-})
+
+            
+    // if (true){
+        
+    //     Swal.fire({
+    //         position: 'top-end',
+    //         icon: 'success',
+    //         title: 'Envio exitoso',
+    //         showConfirmButton: false,
+    //         timer: 1500
+    //     })
+        
+    // }else{
+    //     Swal.fire({
+    //         icon: 'error',
+    //         title: 'Error',
+    //         text: 'Algo anda mal! ',
+
+    //     })
+        
+    // };
+
+
 
 
 boton.addEventListener("mouseover", () => {
