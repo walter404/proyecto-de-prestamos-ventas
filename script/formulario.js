@@ -1,6 +1,6 @@
 // fomulario de contacto
 const form = document.querySelector("form"),
-statusTxt = form.querySelector(".button-area");
+statusTxt = form.querySelector(".button-area span");
 
 form.onsubmit = (e)=>{
   e.preventDefault();
@@ -31,48 +31,6 @@ form.onsubmit = (e)=>{
 }
 
 
-
-// const nombre = document.getElementById("nombreCompleto");
-// const email = document.getElementById("email");
-// const phone = document.getElementById("phone");
-// const form = document.getElementById("form");
-// const parrafo = document.getElementById("warnings");
-// const mensaje = document.getElementById("mensajes");
-// const boton = document.getElementById("boton");
-
-
-
-            
-    // if (true){
-        
-    //     Swal.fire({
-    //         position: 'top-end',
-    //         icon: 'success',
-    //         title: 'Envio exitoso',
-    //         showConfirmButton: false,
-    //         timer: 1500
-    //     })
-        
-    // }else{
-    //     Swal.fire({
-    //         icon: 'error',
-    //         title: 'Error',
-    //         text: 'Algo anda mal! ',
-
-    //     })
-        
-    // };
-
-
-
-
-boton.addEventListener("mouseover", () => {
-    boton.style.backgroundColor = "#333";
-})
-
-boton.addEventListener("mouseout", () => {
-    boton.style.backgroundColor = '#d63031';
-})
 //enter para enviar 
 function usrpas() {
     let entrar = false
